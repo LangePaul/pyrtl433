@@ -266,8 +266,8 @@ class BasePlugin:
              humi = float(message['humidity'])
             except:
              humi = None
-         if humi<0 or humi>100:
-          humi = None
+            if humi<0 or humi>100:
+             humi = None
 
          pressure = None
          if "pressure_hPa" in message:
@@ -452,7 +452,7 @@ class BasePlugin:
                break
              if iUnit==0:
               iUnit=len(Devices)+1
-             Domoticz.Device(Name=unitname, Unit=iUnit,TypeName="Temp",Used=0,DeviceID=unitname).Create() # Temp
+             Domoticz.Device(Name=unitname, Unit=iUnit,TypeName="Temperature",Used=0,DeviceID=unitname).Create() # Temp
             except Exception as e:
              Domoticz.Debug(str(e))
              return False
